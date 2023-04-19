@@ -1,4 +1,4 @@
-package com.eventmanager.models;
+package com.eventmanager.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

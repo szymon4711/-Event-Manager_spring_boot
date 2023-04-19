@@ -1,4 +1,4 @@
-package com.eventmanager.models;
+package com.eventmanager.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

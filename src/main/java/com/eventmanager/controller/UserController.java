@@ -1,7 +1,7 @@
-package com.eventmanager.controllers;
+package com.eventmanager.controller;
 
-import com.eventmanager.models.Event;
-import com.eventmanager.repository.EventRepository;
+import com.eventmanager.model.User;
+import com.eventmanager.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,14 +12,12 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api")
-public class EventController {
+public class UserController {
 
-    private EventRepository eventRepository;
+    UserRepository repository;
 
-
-
-    @GetMapping("/events")
-    public List<Event> getAllEvents() {
-        return eventRepository.findAll();
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return repository.findAll();
     }
 }
