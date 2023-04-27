@@ -3,6 +3,8 @@ package com.eventmanager.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDate;
 
@@ -39,5 +41,8 @@ public class Event {
 
     @Column(name = "location", length = 100)
     private String location;
+
+    @Column(name = "id_assigned_by", nullable = false)
+    private Integer idAssignedBy;
 
 }
