@@ -1,12 +1,14 @@
 package com.eventmanager.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "user_details")
 public class UserDetail {
     @Id
@@ -19,11 +21,5 @@ public class UserDetail {
 
     @Column(name = "surname", nullable = false, length = 100)
     private String surname;
-
-    @Column(name = "email", nullable = false)
-    private String email;
-
-    @Column(name = "admin", nullable = false)
-    private Boolean admin = false;
 
 }

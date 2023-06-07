@@ -31,11 +31,10 @@ public class EventServiceImpl implements EventService {
     @Override
     public void save(EventRequest eventRequest) {
         Event event = eventRequestMapper.toEntity(eventRequest);
-        event.setIdAssignedBy(6); // TODO
-
         event.setLike(0);
         event.setDislike(0);
         event.setUncertain(0);
+        event.setIdAssignedBy(6); // TODO
         eventRepository.save(event);
     }
 
