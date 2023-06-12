@@ -25,6 +25,15 @@ public class EventController {
         return new ResponseEntity<>(events, HttpStatus.OK);
     }
 
+    @GetMapping("/my")
+    public ResponseEntity<List<EventDto>> getAllUserEvents() {
+        List<EventDto> events = eventService.findAllUserEvents();
+        if (events.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(events, HttpStatus.OK);
+    }
+
     @GetMapping("/search")
     public ResponseEntity<List<EventDto>> search(@RequestParam("search") String searchQuery) {
         List<EventDto> events = eventService.getEventByTitleOrDescription(searchQuery);
